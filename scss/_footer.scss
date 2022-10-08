@@ -5,11 +5,8 @@
     width: $width;
     background-color: map-get($map: $bg-color, $key: 'bg-cinco');
     @include media (tablet-3){
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end;
-        width: 100%;
+        @include flex-simple (row, space-between, flex-end);
+        width: $width;
         background-color: rgb(35, 32, 29);
     }
     .contenedor-footer{
