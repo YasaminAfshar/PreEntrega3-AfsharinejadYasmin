@@ -1,0 +1,199 @@
+/*CONTENIDO CONTACTO*/
+
+h5{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 10px;
+    @include media (tablet-4){
+        font-size: ($text-l + .2);
+    }
+}
+
+.content{
+    @include grid ($width);
+    background-color: #181818;
+    color: white;
+    font-family: $title-form;
+    padding: 1.5em;
+    margin: 20px 10px 40px 10px;
+    box-shadow: 4px 7px 10px black;
+    @include media (tablet-4){
+        padding: 0 2rem;
+    }
+    .logo{
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        overflow: hidden;
+        @include media (tablet-4){
+            margin-top: 20px;
+            font-size:$text-xxl;
+        }
+        span{
+            @include text-1 (map-get($map: $text-color, $key: 'text-three'), $textBolder);
+        }
+    }
+    .contact{
+        box-shadow: map-get($map: $shadow, $key: 'shadow-3');
+        @include media (tablet-4){
+            @include grid (2fr 1.5fr);
+        }
+        & > *{
+            padding: .8em;
+        }
+        .contact-form{
+            background-color: #222222; 
+            form{
+                @include grid ($width);
+                @include media (mobile-2){
+                    @include grid (repeat(2, 1fr));
+                }
+                p{
+                    margin: 0;
+                    padding: .6em;
+                }
+                label{
+                    font-size: .9em;
+                    color: rgba(255,255,255,.5);
+                    @include media (tablet-4){
+                        font-size: 1em;
+                    }
+                }
+                textarea{
+                    width: $width;
+                    padding: .3em;
+                    border: none;
+                    background: none;
+                    background-image: map-get($map: $bg-gradient, $key:'gradient-1');
+                    outline: 0;
+                    border-bottom: 2px solid #d63031;
+                    color: map-get($map: $text-color, $key:'text-two');
+                    font-size: ($text-sm + .1);
+                    &::placeholder{
+                        font-size: $text-m;
+                        color: map-get($map: $text-color, $key:'text-cinco');
+                        @include media (tablet-4){
+                            font-size: 1em;
+                        }
+                    }
+                }
+                button{
+                    width: $width;
+                    border: none;
+                    outline: 0;
+                    font-size: ($text-sm + .1);
+                    @include text-1 (map-get($map: $text-color, $key:'text-one'), $textBolder);
+                    background-image: map-get($map: $bg-gradient, $key:'gradient-2');
+                    text-transform: uppercase;
+                    padding: .8em;
+                    letter-spacing: .3em;
+                    &:hover,
+                    &:focus {
+                        color:map-get($map: $text-color, $key:'text-two');
+                        background-image: map-get($map: $bg-gradient, $key:'gradient-3');
+                        outline: 0;
+                    }
+                    @include media (tablet-4){
+                        font-size: $text-l;
+                    }
+                }
+                input{
+                    width: $width;
+                    padding: .3em;
+                    border: none;
+                    background: none;
+                    background-image: map-get($map: $bg-gradient, $key:'gradient-1');
+                    outline: 0;
+                    border-bottom: 2px solid #d63031;
+                    color: map-get($map: $text-color, $key:'text-two');
+                    font-size: ($text-sm + .1);
+                    &::placeholder{
+                        font-size: $text-m;
+                        color: map-get($map: $text-color, $key:'text-cinco');
+                        @include media (tablet-4){
+                            font-size: 1em;
+                        }
+                    }
+                }
+                #mensaje{
+                    resize: none;
+                    font-size: $text-m;
+                }
+            }
+            .block{
+                font-size: $text-m;
+                color: map-get($map: $text-color, $key:'text-cinco');
+                @include media (mobile-2){
+                    display:grid;
+                    grid-column: 1/3;
+                }
+            }
+        }
+        .contact-info{
+            background-color: map-get($map: $bg-color, $key:'bg-ocho');
+            width: $width;
+            h5 {
+                text-align: $align-center;
+                margin: 0 0 1rem 0;
+            }
+            ul{
+                text-align: $align-center;
+                margin: 0 0 1rem 0;
+                list-style: none;
+                padding: 0;
+                @include media (tablet-4){
+                    margin-top: 30px;
+                }
+                li{
+                    padding: .3em;
+                    font-size: $text-sm;
+                    @include media (mobile-1) {
+                        font-size: ($text-sm -.05);
+                    }
+                    @include media (tablet-4){
+                        font-size: $text-m;
+                    }  
+                    i{
+                        padding-right: 5px;
+                    }
+                }
+            }
+            div{
+                @include flex (row, center);
+                width: $width;
+            }
+        }
+        .iframe{
+            position: relative;
+            iframe{
+                width: ($width - 3);
+                height: $h-auto;
+                @include media (mobile-2){
+                    width: ($w-px + 250); 
+                }
+                @include media (tablet-4){
+                    width: 100%;
+                    height: 200px; 
+                }
+            }
+        }
+    }
+}
+
+    
+    
+
+       
+
+    
+
+   
+
+        
+
+          
+
+            
+
+           

@@ -1,0 +1,356 @@
+//=======>>>>>VARIABLES:
+
+//CONTENT-SIZE:
+$width: 100%;
+$w-auto: auto;
+$w-px: 100px;
+$w-50: 50vw;
+$height: 100%;
+$h-auto: auto;
+$h-px: 100px;
+$h-50: 50vh;
+
+
+//FONT-FAMILY:
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+$title-a:'Fira Sans', sans-serif; 
+$title-h:'PT Serif', serif;
+$paragraph-font: 'Roboto', sans-serif;
+$title-form:'Quicksand', sans-serif;
+$title-simple: Verdana, Geneva, Tahoma, sans-serif;
+
+
+//FONT-SIZE:
+
+$text-sm: .7em;
+$text-m: .9em;
+$text-l: 1em;
+$text-xl: 1.5em;
+$text-xxl: 2em;
+$text-px: 10px;
+
+
+//FONT-WEIGHT:
+
+$textThin: 640;
+$textRegular: 800;
+$textBold: bold;
+$textBolder: bolder;
+
+
+//TEXT-ALIGN:
+
+$align-center: center;
+$align-justify: justify;
+
+
+//LETTER-SPACING:
+
+$space-1: .3em;
+$space-2: 1em;
+
+
+
+//=======>>>>>MAPS:
+
+//TEXT-COLOR:
+
+$text-color: (
+    'text-one':black,
+    'text-two': white,
+    'text-three': #960018,
+    'text-cuatro': rgb(135,76,0),
+    'text-cinco': rgba(255,255,255,.5),
+    'text-seis':rgb(97, 55, 0),
+);
+
+//BORDER-RADIUS:
+
+$border-redondo: (
+    'border-uno': 50%,
+    'border-dos': 10%,
+    'border-tres': 2%,
+    'border-cuatro': 20px,
+);
+
+//BACKGROUND-COLOR:
+
+$bg-color: (
+    'bg-cero':rgb(135,76,0),
+    'bg-uno': rgb(230, 227, 222),
+    'bg-dos':  rgba(253, 244, 234, .5),
+    'bg-tres': rgba(188, 141, 81, .4),
+    'bg-cuatro': rgb(207, 203, 198),
+    'bg-cinco': rgb(35, 32, 29),
+    'bg-seis':#181818,
+    'bg-siete': #222222,
+    'bg-ocho': #000,
+    'bg-nueve':#2e6329,
+);
+
+$bg-gradient: (
+    'gradient-1':linear-gradient(to top,#222222,#333232,#444343,#555454),
+    'gradient-2':linear-gradient(90deg, rgba(245,19,19,0.9806034482758621) 31%, rgba(237,47,67,0.9719827586206896) 52%),
+    'gradient-3': linear-gradient(240deg, rgba(245,19,19,0.9806034482758621) 31%, rgba(237,47,67,0.9719827586206896) 52%),
+);
+
+//BOX-SHADOWS:
+
+$shadow: (
+    'shadow-1': 0 0 0 0 rgba(0,0,0,0.85),
+    'shadow-2': 0 0 0 15px rgba(0,0,0,0),
+    'shadow-3': 0 0 20px 0 rgba(255,255,255,.3),
+    'shadow-4': 3px 6px 8px black,
+    'shadow-5': 4px 7px 10px black,
+    'shadow-6': 0 0 8px rgba(0,0,0,0.85),
+);
+
+
+//.class {
+//    propiedad: map-get($map: value, $key: value);
+//}
+
+
+
+
+//=======>>>>>MIXINS - GENERAL:
+
+@mixin flex ($direction, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+//@include flex ($direction, $justify);
+
+@mixin flex-completo ($direction, $justify, $align, $self) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    align-self: $self;
+}
+//@include flex-completo ($direction, $justify, $align, $self);
+
+@mixin flex-simple ($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+//@include flex-simple ($direction, $justify, $align);
+
+@mixin flex-simple2 ($direction, $justify, $self) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-self: $self;
+}
+//@include flex-simple2 ($direction, $justify, $self);
+
+@mixin grid ($template) {
+    display: grid;
+    grid-template-columns: $template;
+}
+//@include grid ($template);
+
+@mixin text ($fontsize, $textalign) {
+    font-size: $fontsize;
+    text-align: $textalign;
+}
+//@include text ($fontsize, $textalign);
+
+@mixin text-1 ($color, $fontweight) {
+    color: $color;
+    font-weight: $fontweight;
+}
+//@include text-1 ($color, $fontweight);
+
+@mixin text-2 ($fontfamily, $fontsize, $color, $textalign, $margin, $padding) {
+    font-family: $fontfamily;
+    font-size: $fontsize;
+    color: $color;
+    text-align: $textalign;
+    margin: $margin;
+    padding: $padding;
+}
+//@include text-2 ($fontfamily, $fontsize, $color, $textalign, $margin, $padding);
+
+@mixin text-3 ($fontfamily, $fontsize, $color, $textalign,$fontweight, $margin, $padding) {
+    font-family: $fontfamily;
+    font-size: $fontsize;
+    color: $color;
+    text-align: $textalign;
+    font-weight: $fontweight;
+    margin: $margin;
+    padding: $padding;
+}
+//@include text-3 ($fontfamily, $fontsize, $color, $textalign, $fontweight, $margin, $padding);
+
+@mixin text-4 ($fontfamily, $fontsize, $color, $textalign, $line-height, $margin, $padding) {
+    font-family: $fontfamily;
+    font-size: $fontsize;
+    color: $color;
+    text-align: $textalign;
+    line-height: $line-height;
+    margin: $margin;
+    padding: $padding;
+}
+//@include text-4 ($fontfamily, $fontsize, $color, $textalign, $line-height, $margin, $padding);
+
+@mixin animation ($transform, $transition) {
+    transform: $transform;
+    transition: $transition;
+}
+//@include animation ($transform, $transition);
+
+@mixin contenido ($width, $height, $margin, $padding, $bg-color, $border, $shadow) {
+    width: $width;
+    height: $height;
+    margin: $margin;
+    padding: $padding;
+    background-color: $bg-color;
+    border-radius: $border;
+    box-shadow: $shadow;
+}
+//@include contenido ($width, $height, $margin, $padding, $bg-color, $border, $shadow);
+
+@mixin medida ($width, $margin) {
+    width: $width;
+    margin: $margin;
+}
+//@include medida ($width, $margin);
+
+
+
+//=======>>>>>MIXINS - MEDIA-QUERIES:
+
+@mixin media ($breakpoint) {
+    @if $breakpoint == mobile-1 {
+        @media (min-width: 280px) and (max-width: 320px) {
+            @content;
+        }
+    }
+    @if $breakpoint == mobile-2 {
+        @media (min-width:480px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet-1 {
+        @media (min-width: 600px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet-2 {
+        @media (min-width: 640px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet-3 {
+        @media (min-width: 660px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet-4 {
+        @media (min-width: 700px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet-4 {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet-5 {
+        @media (min-width: 800px) {
+            @content;
+        }
+    }
+    
+    @if $breakpoint == desktop {
+        @media (min-width: 1000px) {
+            @content;
+        }
+    }
+}
+//@include media (value) {}
+
+
+
+
+//CONTENIDO COMPARTIDO GENERAL
+/*CONTENIDO COMPARTIDO*/
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.parrafo{
+    @include text-4 ($paragraph-font, $text-m, map-get($map:$text-color,$key:'text-one'), $align-center, 1.6, 10px auto, 5px);
+    @include media (mobile-2){
+        font-size: $text-l;
+        margin: 20px;
+    }
+    @include media (tablet-3){
+        font-size: ($text-l + .1);
+    }
+    @include media (desktop) {
+        font-size: ($text-l + .2);
+    }
+}
+
+
+h1{
+    @include text-3 ($title-h, ($text-l + 0.2em), map-get($map:$text-color,$key:'text-one'), $align-center, $textBold, 10px, 20px);
+    letter-spacing: 1px;
+    @include media (tablet-3){
+        font-size: ($text-xl + .3);
+    }
+    
+}
+
+h2{
+    @include text-3 ($title-h, ($text-m + 0.05em), map-get($map:$text-color,$key:'text-cuatro'), $align-center, $textBold, 0, 20px);
+    text-decoration: underline;
+    @include media (tablet-3){
+        font-size: ($text-l + .32);
+    }
+}
+
+/*CONTENIDO WHATSAPP*/
+
+.container-btn{
+    background-color: map-get($map:$bg-color,$key:'bg-nueve');
+    border: 0 solid #fff;
+    border-radius: map-get($map:$border-redondo,$key:'border-uno');
+    position: fixed;
+    z-index: 999;
+    bottom: 80px;
+    right: 25px;
+    padding: 10px;
+    transition: ease 0.3s;
+    animation: efecto 1.2s infinite;
+    @keyframes efecto{
+        0%{
+            box-shadow:map-get($map:$shadow,$key:'shadow-1');
+        }
+        100%{
+            box-shadow: map-get($map:$shadow,$key:'shadow-2');
+        }
+    }
+    &:hover{
+        @include animation (scale(1.1), 0.3s);
+    }
+    .container-btn__wsp{
+        width: 30px;
+        transition: ease 1s;
+        @include media (tablet-3){
+            width: 50px;
+        }
+    }
+}

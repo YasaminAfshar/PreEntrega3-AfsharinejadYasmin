@@ -1,0 +1,343 @@
+/*CONTENIDO TRATAMIENTOS*/
+
+.cont-tto{
+    margin: 10px auto;
+    padding: 5px;
+    width: $width;
+    height: $h-auto;
+    h1{
+        font-size: ($text-l + .16);
+        padding: 5px;
+        @include media (mobile-2) {
+            font-size: ($text-l + .25);
+        }
+        @include media (desktop) {
+            font-size: $text-xl;
+        }
+    }
+    h2{
+        @include text (($text-l + .08), $align-center);
+        margin: 0 auto 20px auto;
+        padding: 5px;
+        @include media (mobile-2) {
+            font-size: ($text-l + .13);
+        }
+        @include media (desktop) {
+            font-size: ($text-l + .24);
+        }
+    }
+}
+
+.contenedor-a{
+    @include flex (column, center);
+    width: $width;
+    height: $h-auto;
+    margin: 5px auto;
+    padding: 10px;
+    @include media (tablet-4) {
+        @include flex (row, none);
+        width: ($width - 5);
+        margin: 10px 15px;
+    }
+    @include media (desktop) {
+        margin: 5px 30px 10px 30px;
+    }
+    .cont-a__texto{
+        width: $width;
+        align-self: center;
+        background-color: map-get($map: $bg-color , $key:'bg-uno');
+        p{
+            @include text-2 ($paragraph-font, $text-l, map-get($map: $text-color, $key: 'text-one'), $align-center, 0, 10px 5px);
+            width: $width;
+            line-height: 1.6;
+            border-radius: map-get($map: $border-redondo, $key:'border-tres');
+        }
+        @include media (desktop) {
+            font-size: ($text-l + .1);
+        }
+    }
+    .cont-a__img{
+        display: flex;
+        align-self: center;
+        width: $width;
+        img{
+            width: 16em;
+            margin: 10px auto;
+            padding-top: 15px;
+            border-radius: map-get($map: $border-redondo, $key:'border-tres');
+            @include media (mobile-1) {
+                width: 14em;
+            }
+            @include media (tablet-4) {
+                width: $width;
+                margin: 10px 20px;
+                padding: 10px;
+            }
+        }
+        @include media (mobile-1) {
+            width: ($width - 5);
+        }
+        @include media (tablet-4) {
+            @include flex-simple (row, center, center);
+            margin: 10px;
+            width:($width - 20);
+        }
+        @include media (desktop) {
+            width:($width - 30);
+        }
+        
+    }
+}
+         
+.contenedor-b{
+    @include flex (column, center);
+    width: $width;
+    height: $h-auto;
+    margin: 5px auto;
+    padding: 10px;
+    @include media (tablet-4) {
+        @include flex (row-reverse, none);
+        width: ($width - 5);
+        margin: 10px;
+    }
+    @include media (desktop) {
+        margin: 10px 30px 15px 30px;
+    }
+    .cont-b__texto{
+        width: $width;
+        align-self: center;
+        background-color: map-get($map: $bg-color , $key:'bg-uno');
+        p{
+            @include text-2 ($paragraph-font, $text-l, map-get($map: $text-color, $key: 'text-one'), $align-center, 0, 10px 5px);
+            width: $width;
+            line-height: 1.6;
+            border-radius: map-get($map: $border-redondo, $key:'border-tres');
+        }
+        @include media (desktop) {
+            font-size: ($text-l + .1);
+        }
+    }
+    .cont-b__img{
+        display: flex;
+        align-self: center;
+        width: $width;
+        img{
+            width: 16em;
+            margin: 30px auto;
+            border-radius: map-get($map: $border-redondo, $key:'border-tres');
+            @include media (mobile-1) {
+                width: 14em;
+            }
+            @include media (tablet-4) {
+                width: $width;
+                margin: 30px 25px 30px 15px;
+                padding: 10px;
+            }
+        }
+        @include media (mobile-1) {
+            width: ($width - 5);
+        }
+        @include media (tablet-4) {
+            @include flex-simple (row, center, center);
+            margin: 10px;
+            width:($width - 20);
+        }
+        @include media (desktop) {
+            width:($width - 30);
+        }
+    }
+}       
+ 
+#imagen-1,
+#imagen-2 {
+    @include media (desktop) {
+        width: 450px;
+        height: 380px;
+    }
+}
+
+.iframe-video{
+    width: $width;
+    height: $height;
+    margin: 0 auto;
+    display: flex;
+    align-self: center;
+    @include media (desktop) {
+        margin-bottom: 30px;
+    }
+    iframe{
+        width: 18em;
+        height: 13em;
+        margin: 10px auto;
+        @include media (mobile-1) {
+            width: 14em;
+            height: 10em;
+        }
+        @include media (mobile-2) {
+            width: 24em;
+            height: 15em;
+        }
+        @include media (tablet-4) {
+            width: 26em;
+            height: 18em;
+        }
+        @include media (desktop) {
+            width: 32em;
+            height: 18em;
+        }
+    }
+}
+    
+.beneficio-a{
+    border: 2px dashed black;
+    border-radius: map-get($map: $border-redondo, $key:'border-tres');
+    margin: 30px auto;
+    background-color: map-get($map: $bg-color , $key:'bg-uno');
+    width: ($width - 5);
+    h2{
+        @include text (($text-l + .08), $align-center);
+        margin: 10px auto 20px auto;
+        padding: 5px;
+        @include media (mobile-2) {
+            font-size: ($text-l + .13);
+        }
+        @include media (desktop) {
+            font-size: ($text-l + .24);
+        }
+    }
+    p{
+        @include text-4 ($paragraph-font, $text-l, map-get($map:$text-color, $key: 'text-one'), $align-center, 1.6, 0, 0 10px 10px 10px);
+        @include media (desktop) {
+            font-size: ($text-l + .1);
+        }
+        
+    }
+    @include media (mobile-1) {
+        margin: 10px auto 30px auto;
+    }
+    @include media (mobile-2) {
+        margin: 15px auto 40px auto;
+    }
+}
+    
+        
+.img-a{
+    @include flex-simple2 (row, center, center);
+    width: ($width - 10);
+    height: $h-auto;
+    margin: 20px auto 40px auto;
+    img{
+        width: ($width - 10);
+        @include media (mobile-1) {
+            width: $width;
+        }
+        @include media (tablet-4) {
+            width: 519px;
+            height: 464px;
+        }
+    }
+    @include media (mobile-1) {
+        width: ($width - 5);
+    }
+    @include media (mobile-2) {
+        width: 80%;
+    }
+}
+
+.img-b{
+    @extend .img-a;
+    @include media (tablet-4) {
+        width: 519px;
+        height: auto;
+    }
+}    
+        
+.text-1{
+    @include flex (column, center);
+    text-align: center;
+    margin: 40px auto 50px auto;
+    width: ($width - 10);
+    background-color:  map-get($map: $bg-color, $key: 'bg-uno');
+    border-radius: map-get($map: $border-redondo, $key: 'border-tres');
+    h2{
+        font-size: ($text-l + .08);
+        margin: 10px auto 5px auto;
+        padding: 5px;
+        @include media (mobile-2) {
+            font-size: ($text-l + .13);
+        }
+        @include media (desktop) {
+            font-size: ($text-l + .24);
+        }
+    }
+    p{ 
+        @include text-4 ($paragraph-font, $text-l, map-get($map:$text-color, $key: 'text-one'), $align-center, 1.6, 10px, 10px 5px);
+        @include media (desktop) {
+            font-size: ($text-l + .1);
+        }
+    }
+}
+     
+.cont-prp__img{
+    @include flex-simple2 (row, center, center);
+    width: $width;
+    height: $height;
+    img {
+        width: 16em;
+        height: 14em;
+        margin: 20px auto 30px auto;
+        border-radius: map-get($map: $border-redondo, $key: 'border-tres');
+        @include media (mobile-2) {
+            width: 18em;
+            height: 16em;
+            margin: 30px 10px;
+        }
+        @include media (tablet-4) {
+            width: 22em;
+            height: 19em;
+            margin: 30px 20px;
+        }
+        @include media (desktop) {
+            width: 26em;
+            height: 21em;
+        }
+    }
+    @include media (mobile-2) {
+        @include flex-simple (row, center, center);
+        width: ($width - 20);
+        height: $height;
+    }
+}
+
+.cont-mtc__img {
+    @include flex-simple2 (row, center, center);
+    width: $width;
+    height: $height;
+    img {
+        width: 16em;
+        height: 14em;
+        margin: 20px auto 30px auto;
+        border-radius: map-get($map: $border-redondo, $key: 'border-tres');
+        @include media (mobile-2) {
+            width: 18em;
+            height: 16em;
+            margin: 30px 10px;
+        }
+        @include media (tablet-4) {
+            width: 18em;
+            height: 19em;
+            margin: 20px 20px;
+        }
+        @include media (desktop) {
+            width: 26em;
+            height: 21em;
+        }
+    }
+    @include media (mobile-2) {
+        @include flex-simple (row, center, center);
+        width: ($width - 20);
+        height: $height;
+    }
+}
+
+  

@@ -1,0 +1,103 @@
+/*SEDES*/
+
+#sede-h1{
+    font-size: ($text-xl - .1);
+    @include media (tablet-2) {
+        font-size: ($text-xl + .2);
+    }
+}
+
+#sede-h2{
+    @include text-2 ($title-h, ($text-l + .1), map-get($map: $text-color, $key: 'text-seis'), $align-center, 10px 5px, .3em);
+    text-decoration: underline;
+    @include media (tablet-2) {
+        font-size: ($text-l + .3);
+    }
+}
+
+.container-sedes{
+    @for $i from 1 through 4 {
+        .cont-sede-#{$i} {
+            border-top: 3px groove black;
+            @include media (tablet-2) {
+                margin: 20px;
+            }
+        } 
+    }
+    @for $i from 1 through 4 {
+        .sede-#{$i} {
+            @include flex-simple (column, center, center);
+            height: $h-auto;
+            width: $width;
+        }
+    }
+    .sede-1{
+        @include media (tablet-2) {
+            @include flex-simple (row, space-evenly, center);
+        }
+    }
+    .sede-2{
+        @include media (tablet-2) {
+            @include flex-simple (row-reverse, space-evenly, center);
+        }
+    }
+    .sede-3{
+        @include media (tablet-2) {
+            @include flex-simple (row, space-evenly, center);
+        }
+    }
+    .sede-4{
+        @include media (tablet-2) {
+            @include flex-simple (row-reverse, space-evenly, center);
+        }
+    }
+    .maps{
+        width: $width;
+        height: ($h-px + 120);
+        padding: 1em;
+        overflow: hidden;
+        @include media (tablet-2) {
+            width:($width - 50);
+        }
+        #iframe{
+            width: $width;
+            height: $height;
+            @include media (tablet-2) {
+                width: $width;
+            }
+        }
+    }
+    .list-datos{
+        @include media (tablet-2) {
+            width:($width - 50);
+        }
+        ul{
+            margin: 5px 10px 20px 10px;
+            padding: 5px 0;
+            overflow: hidden;
+            width: $width;
+            li{
+                list-style: none;
+                @include text-3 (none, ($text-sm + .1), map-get($map: $text-color, $key: 'text-one'), $align-center,$textThin, 0, .3em);
+                cursor:default;
+                &:hover{
+                    @include animation (scale(1.1), transform .8s);
+                    font-weight: $textBolder;
+                }
+                i{
+                    padding-right: 5px;
+                }
+                @include media (tablet-2) {
+                    @include text ($text-m, $align-center);
+                    padding: .5em;
+                }
+                @include media (tablet-5) {
+                    font-size: ($text-l + .1);
+                    padding: .7em;
+                }
+            }   
+        }   
+    } 
+}
+
+

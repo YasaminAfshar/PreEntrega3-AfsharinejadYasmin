@@ -844,7 +844,6 @@ h5{
 /*================>>MEDIA QUERIES "GENERAL"<<================*/
 
 @media (min-width: 280px) and (max-width: 320px) {
-   
     .contenedor-footer img{
         width: 3rem;
     }
@@ -885,6 +884,10 @@ h5{
 
     .parrafo{
         font-size: 1.2em;
+    }
+
+    .container-btn__wsp{
+        width: 60px;
     }
 }
 

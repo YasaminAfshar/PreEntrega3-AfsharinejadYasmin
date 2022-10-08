@@ -1,0 +1,71 @@
+/*NAVBAR*/
+
+.bg-nav{
+    background-color: map-get($map: $bg-color, $key: 'bg-dos');
+}
+
+#botonera{
+    img{
+        width: ($w-px - 10px);
+        margin-left: 30px;
+        &:hover{
+            filter:sepia(2.5);
+            @include animation (scale(1.1), transform .8s);
+        }
+    }
+    .boton-menu{
+        width: ($w-px - 70px);
+        margin: 0;
+    }
+    ul{
+        li{
+            a{
+                padding: 10px 25px;
+                font-size: $text-m;
+                letter-spacing: 1.2px;
+                font-family: $title-a; 
+                @include text-1 (map-get($map: $text-color, $key: 'text-one'), ($textThin - 40));
+            }
+        }
+    }
+    @for $i from 1 through 5 {
+        #botonera-efecto#{$i} {
+            @include flex (row, center);
+            position: relative;
+            transition: color .3s ease-in-out;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                width: $width;
+                height: ($h-px - 97);
+                background-color: map-get($map: $bg-color, $key: 'bg-cero');
+                @include animation (scaleX(0), transform .6s ease-out);
+            }
+            &:hover {
+                color: map-get($map: $text-color, $key: 'text-cuatro');
+                &::before {
+                    transform: scaleX(1);
+                } 
+            }
+        }
+    }
+    @for $i from 1 through 2 {
+        #dropdown-efecto#{$i} {
+            @include flex (row, center);
+            &:hover{
+                background-color: map-get($map: $bg-color, $key: 'bg-tres');
+                @include animation (scaleX(.98), background-color .4s ease-in-out);
+            }
+        }
+    }
+}
+
+/*HEADER*/
+
+header {
+    img{
+        width: $width;
+        height: $height;
+    }
+}
