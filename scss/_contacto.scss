@@ -1,9 +1,9 @@
 /*CONTENIDO CONTACTO*/
 
 h5{
-    text-align: center;
-    font-weight: bold;
-    font-size: 1em;
+    text-align: $align-center;
+    font-weight: $textBold;
+    font-size: $text-l;
     margin-bottom: 10px;
     @include media (tablet-4){
         font-size: ($text-l + .2);
@@ -12,18 +12,18 @@ h5{
 
 .content{
     @include grid ($width);
-    background-color: #181818;
-    color: white;
+    background-color: map-get($map: $bg-color, $key:'bg-seis');
+    color: map-get($map: $text-color, $key:'text-two');
     font-family: $title-form;
     padding: 1.5em;
     margin: 20px 10px 40px 10px;
-    box-shadow: 4px 7px 10px black;
+    box-shadow: map-get($map: $shadow, $key:'shadow-5');
     @include media (tablet-4){
         padding: 0 2rem;
     }
     .logo{
-        text-align: center;
-        font-size: 1.5em;
+        text-align: $align-center;
+        font-size: $text-xl;
         margin-bottom: 20px;
         overflow: hidden;
         @include media (tablet-4){
@@ -43,7 +43,7 @@ h5{
             padding: .8em;
         }
         .contact-form{
-            background-color: #222222; 
+            background-color: map-get($map: $bg-color, $key: 'bg-siete');
             form{
                 @include grid ($width);
                 @include media (mobile-2){
@@ -54,10 +54,10 @@ h5{
                     padding: .6em;
                 }
                 label{
-                    font-size: .9em;
+                    font-size: $text-m;
                     color: rgba(255,255,255,.5);
                     @include media (tablet-4){
-                        font-size: 1em;
+                        font-size: $text-l;
                     }
                 }
                 textarea{
@@ -74,7 +74,7 @@ h5{
                         font-size: $text-m;
                         color: map-get($map: $text-color, $key:'text-cinco');
                         @include media (tablet-4){
-                            font-size: 1em;
+                            font-size: $text-l;
                         }
                     }
                 }
@@ -83,11 +83,11 @@ h5{
                     border: none;
                     outline: 0;
                     font-size: ($text-sm + .1);
-                    @include text-1 (map-get($map: $text-color, $key:'text-one'), $textBolder);
                     background-image: map-get($map: $bg-gradient, $key:'gradient-2');
+                    @include text-1 (map-get($map: $text-color, $key:'text-one'), $textBolder);
                     text-transform: uppercase;
                     padding: .8em;
-                    letter-spacing: .3em;
+                    letter-spacing: $space-1;
                     &:hover,
                     &:focus {
                         color:map-get($map: $text-color, $key:'text-two');
@@ -112,7 +112,7 @@ h5{
                         font-size: $text-m;
                         color: map-get($map: $text-color, $key:'text-cinco');
                         @include media (tablet-4){
-                            font-size: 1em;
+                            font-size: $text-l;
                         }
                     }
                 }
@@ -173,8 +173,8 @@ h5{
                     width: ($w-px + 250); 
                 }
                 @include media (tablet-4){
-                    width: 100%;
-                    height: 200px; 
+                    width: $width;
+                    height: ($h-px + 100); 
                 }
             }
         }

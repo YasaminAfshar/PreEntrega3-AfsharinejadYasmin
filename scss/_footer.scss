@@ -7,7 +7,6 @@
     @include media (tablet-3){
         @include flex-simple (row, space-between, flex-end);
         width: $width;
-        background-color: rgb(35, 32, 29);
     }
     .contenedor-footer{
         margin: 20px auto;
@@ -15,7 +14,7 @@
             margin: 20px 0 20px 40px;
         }
         .footer__title{
-            @include text-2 ($title-h, $text-l,map-get($map: $text-color, $key:  'text-two'), $align-center, 5px auto, 0);
+            @include text-2 ($title-h, $text-l,map-get($map: $text-color, $key: 'text-two'), $align-center, 5px auto, 0);
         }
         a{
             text-decoration: none;
@@ -34,7 +33,7 @@
     p{
         @include text-2 ($title-simple, $text-sm, map-get($map: $text-color, $key:  'text-two'), $align-center, 10px auto, 0);
         @include media (tablet-3){
-            text-align: end;
+            text-align: $align-end;
             margin: 10px 25px;
         }
     }

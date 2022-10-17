@@ -47,9 +47,8 @@
         align-self: center;
         background-color: map-get($map: $bg-color , $key:'bg-uno');
         p{
-            @include text-2 ($paragraph-font, $text-l, map-get($map: $text-color, $key: 'text-one'), $align-center, 0, 10px 5px);
+            @include text-4 ($paragraph-font, $text-l, map-get($map: $text-color, $key: 'text-one'), $align-center, 1.6, 0, 10px 5px);
             width: $width;
-            line-height: 1.6;
             border-radius: map-get($map: $border-redondo, $key:'border-tres');
         }
         @include media (desktop) {
@@ -57,16 +56,15 @@
         }
     }
     .cont-a__img{
-        display: flex;
-        align-self: center;
+        @include flex-simple2 (row, none, center);
         width: $width;
         img{
-            width: 16em;
+            width: $w-em;
             margin: 10px auto;
             padding-top: 15px;
             border-radius: map-get($map: $border-redondo, $key:'border-tres');
             @include media (mobile-1) {
-                width: 14em;
+                width: ($w-em - 2);
             }
             @include media (tablet-4) {
                 width: $width;
@@ -108,9 +106,8 @@
         align-self: center;
         background-color: map-get($map: $bg-color , $key:'bg-uno');
         p{
-            @include text-2 ($paragraph-font, $text-l, map-get($map: $text-color, $key: 'text-one'), $align-center, 0, 10px 5px);
+            @include text-4 ($paragraph-font, $text-l, map-get($map: $text-color, $key: 'text-one'), $align-center, 1.6, 0, 10px 5px);
             width: $width;
-            line-height: 1.6;
             border-radius: map-get($map: $border-redondo, $key:'border-tres');
         }
         @include media (desktop) {
@@ -118,15 +115,14 @@
         }
     }
     .cont-b__img{
-        display: flex;
-        align-self: center;
+        @include flex-simple2 (row, none, center);
         width: $width;
         img{
-            width: 16em;
+            width: $w-em;
             margin: 30px auto;
             border-radius: map-get($map: $border-redondo, $key:'border-tres');
             @include media (mobile-1) {
-                width: 14em;
+                width: ($w-em - 2);
             }
             @include media (tablet-4) {
                 width: $width;
@@ -151,39 +147,37 @@
 #imagen-1,
 #imagen-2 {
     @include media (desktop) {
-        width: 450px;
-        height: 380px;
+        width: ($w-px + 350);
+        height: ($h-px + 280);
     }
 }
 
 .iframe-video{
+    @include flex-simple2 (row, none, center);
     width: $width;
     height: $height;
     margin: 0 auto;
-    display: flex;
-    align-self: center;
     @include media (desktop) {
         margin-bottom: 30px;
     }
     iframe{
-        width: 18em;
-        height: 13em;
+        width: ($w-em + 2);
+        height: ($h-em - 3);
         margin: 10px auto;
         @include media (mobile-1) {
-            width: 14em;
-            height: 10em;
+            width: ($w-em - 2);
+            height: ($h-em - 6);
         }
         @include media (mobile-2) {
-            width: 24em;
-            height: 15em;
+            width: ($w-em + 8);
+            height: ($h-em - 1);
         }
         @include media (tablet-4) {
-            width: 26em;
-            height: 18em;
+            width: ($w-em + 10);
+            height: ($h-em + 2);
         }
         @include media (desktop) {
-            width: 32em;
-            height: 18em;
+            width: ($w-em + 16);
         }
     }
 }
@@ -232,29 +226,35 @@
             width: $width;
         }
         @include media (tablet-4) {
-            width: 519px;
-            height: 464px;
+            width: ($w-px + 419);
+            height: ($h-px + 364);
         }
     }
     @include media (mobile-1) {
         width: ($width - 5);
     }
     @include media (mobile-2) {
-        width: 80%;
+        width: ($width - 20);
     }
 }
 
 .img-b{
     @extend .img-a;
-    @include media (tablet-4) {
-        width: 519px;
-        height: auto;
+    img {
+        height: ($h-px + 120);
+        @include media (mobile-2) {
+            height:($h-px + 180);
+        }
+        @include media (tablet-4) {
+            width: ($w-px + 419);
+            height: ($h-px + 230);
+        }
     }
 }    
         
 .text-1{
     @include flex (column, center);
-    text-align: center;
+    text-align: $align-center;
     margin: 40px auto 50px auto;
     width: ($width - 10);
     background-color:  map-get($map: $bg-color, $key: 'bg-uno');
@@ -283,23 +283,23 @@
     width: $width;
     height: $height;
     img {
-        width: 16em;
-        height: 14em;
+        width: $w-em;
+        height: ($h-em - 2);
         margin: 20px auto 30px auto;
         border-radius: map-get($map: $border-redondo, $key: 'border-tres');
         @include media (mobile-2) {
-            width: 18em;
-            height: 16em;
+            width: ($w-em + 2);
+            height: $h-em;
             margin: 30px 10px;
         }
         @include media (tablet-4) {
-            width: 22em;
-            height: 19em;
+            width: ($w-em + 6);
+            height: ($h-em + 3);
             margin: 30px 20px;
         }
         @include media (desktop) {
-            width: 26em;
-            height: 21em;
+            width: ($w-em + 10);
+            height: ($h-em + 5);
         }
     }
     @include media (mobile-2) {
@@ -314,23 +314,22 @@
     width: $width;
     height: $height;
     img {
-        width: 16em;
-        height: 14em;
+        width: $w-em;
+        height: ($h-em - 2);
         margin: 20px auto 30px auto;
         border-radius: map-get($map: $border-redondo, $key: 'border-tres');
         @include media (mobile-2) {
-            width: 18em;
-            height: 16em;
+            width: ($w-em + 2);
+            height: $h-em;
             margin: 30px 10px;
         }
         @include media (tablet-4) {
-            width: 18em;
-            height: 19em;
-            margin: 20px 20px;
+            height: ($h-em + 3);
+            margin: 20px;
         }
         @include media (desktop) {
-            width: 26em;
-            height: 21em;
+            width: ($w-em + 10);
+            height: ($h-em + 5);
         }
     }
     @include media (mobile-2) {

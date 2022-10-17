@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 /*CONTENIDO COMPARTIDO*/
 * {
   margin: 0;
@@ -99,6 +100,119 @@ h2 {
 @media (min-width: 660px) {
   .container-btn .container-btn__wsp {
     width: 50px;
+  }
+}
+
+/*CONTENIDO ERROR 404*/
+#container-error {
+  background-color: #f5da0e;
+}
+#container-error .cont-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#container-error .cont-404 .cont-404__first {
+  width: 90%;
+  width: 100%;
+}
+#container-error .cont-404 .cont-404__first img {
+  width: 100%;
+  height: auto;
+}
+#container-error .cont-404 .cont-404__second {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+#container-error .cont-404 .cont-404__second img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+}
+@media (min-width: 800px) {
+  #container-error .cont-404 .cont-404__second img {
+    width: 340px;
+  }
+}
+@media (min-width: 1000px) {
+  #container-error .cont-404 .cont-404__second img {
+    width: 440px;
+  }
+}
+#container-error .cont-404 .cont-404__second h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.4em;
+  color: black;
+  text-align: center;
+  margin: 15px;
+  padding: 5px;
+}
+@media (min-width: 600px) {
+  #container-error .cont-404 .cont-404__second h1 {
+    font-size: 1.6em;
+  }
+}
+#container-error .cont-404 .cont-404__second p {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+  margin: 25px 10px;
+  padding: 5px;
+}
+#container-error .cont-404 .cont-404__second p span {
+  font-weight: bolder;
+  text-decoration: underline;
+  overflow: hidden;
+}
+@media (min-width: 600px) {
+  #container-error .cont-404 .cont-404__second p {
+    font-size: 1.5em;
+  }
+}
+#container-error .cont-404 .cont-404__second #button-404 {
+  background-color: rgb(135, 76, 0);
+  border: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.85);
+  margin: 20px;
+}
+#container-error .cont-404 .cont-404__second #button-404 a {
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+#container-error .cont-404 .cont-404__second #button-404:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  overflow: hidden;
+}
+@media (min-width: 600px) {
+  #container-error .cont-404 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+}
+@media (min-width: 800px) {
+  #container-error .cont-404 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 0 40px 0;
   }
 }
 
@@ -285,7 +399,6 @@ header img {
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
-    background-color: rgb(35, 32, 29);
   }
 }
 #footer .contenedor-footer {
@@ -410,15 +523,17 @@ header img {
   }
 }
 .cont-1 #card-img p {
-  font-family: "PT Serif", serif;
-  font-size: 1em;
-  color: black;
-  text-align: center;
-  font-weight: bold;
   margin: 8px 0 0 0;
   padding: 5px 0 0 0;
   width: 100%;
-  cursor: default;
+  text-align: center;
+}
+.cont-1 #card-img p a {
+  text-decoration: none;
+  font-size: 1em;
+  text-align: center;
+  color: black;
+  font-weight: bold;
 }
 @media (min-width: 600px) {
   .cont-1 #card-img p {
@@ -613,9 +728,9 @@ h5 {
   border: none;
   outline: 0;
   font-size: 0.8em;
+  background-image: linear-gradient(90deg, rgba(245, 19, 19, 0.9806034483) 31%, rgba(237, 47, 67, 0.9719827586) 52%);
   color: black;
   font-weight: bolder;
-  background-image: linear-gradient(90deg, rgba(245, 19, 19, 0.9806034483) 31%, rgba(237, 47, 67, 0.9719827586) 52%);
   text-transform: uppercase;
   padding: 0.8em;
   letter-spacing: 0.3em;
@@ -831,10 +946,10 @@ h5 {
   font-size: 1em;
   color: black;
   text-align: center;
+  line-height: 1.6;
   margin: 0;
   padding: 10px 5px;
   width: 100%;
-  line-height: 1.6;
   border-radius: 2%;
 }
 @media (min-width: 1000px) {
@@ -844,6 +959,8 @@ h5 {
 }
 .contenedor-a .cont-a__img {
   display: flex;
+  flex-direction: row;
+  justify-content: none;
   align-self: center;
   width: 100%;
 }
@@ -945,10 +1062,10 @@ h5 {
   font-size: 1em;
   color: black;
   text-align: center;
+  line-height: 1.6;
   margin: 0;
   padding: 10px 5px;
   width: 100%;
-  line-height: 1.6;
   border-radius: 2%;
 }
 @media (min-width: 1000px) {
@@ -958,6 +1075,8 @@ h5 {
 }
 .contenedor-b .cont-b__img {
   display: flex;
+  flex-direction: row;
+  justify-content: none;
   align-self: center;
   width: 100%;
 }
@@ -1025,11 +1144,13 @@ h5 {
 }
 
 .iframe-video {
+  display: flex;
+  flex-direction: row;
+  justify-content: none;
+  align-self: center;
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  display: flex;
-  align-self: center;
 }
 @media (min-width: 1000px) {
   .iframe-video {
@@ -1068,7 +1189,6 @@ h5 {
 @media (min-width: 1000px) {
   .iframe-video iframe {
     width: 32em;
-    height: 18em;
   }
 }
 
@@ -1160,16 +1280,24 @@ h5 {
   }
 }
 
+.img-b img {
+  height: 220px;
+}
+@media (min-width: 480px) {
+  .img-b img {
+    height: 280px;
+  }
+}
 @media (min-width: 700px) {
-  .img-b {
+  .img-b img {
     width: 519px;
-    height: auto;
+    height: 330px;
   }
 }
 @media (min-width: 768px) {
-  .img-b {
+  .img-b img {
     width: 519px;
-    height: auto;
+    height: 330px;
   }
 }
 
@@ -1288,16 +1416,14 @@ h5 {
 }
 @media (min-width: 700px) {
   .cont-mtc__img img {
-    width: 18em;
     height: 19em;
-    margin: 20px 20px;
+    margin: 20px;
   }
 }
 @media (min-width: 768px) {
   .cont-mtc__img img {
-    width: 18em;
     height: 19em;
-    margin: 20px 20px;
+    margin: 20px;
   }
 }
 @media (min-width: 1000px) {

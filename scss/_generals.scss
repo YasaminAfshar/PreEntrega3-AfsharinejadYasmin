@@ -4,11 +4,11 @@
 $width: 100%;
 $w-auto: auto;
 $w-px: 100px;
-$w-50: 50vw;
+$w-em: 16em;
 $height: 100%;
 $h-auto: auto;
 $h-px: 100px;
-$h-50: 50vh;
+$h-em: 16em;
 
 
 //FONT-FAMILY:
@@ -17,12 +17,14 @@ $h-50: 50vh;
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 $title-a:'Fira Sans', sans-serif; 
 $title-h:'PT Serif', serif;
 $paragraph-font: 'Roboto', sans-serif;
 $title-form:'Quicksand', sans-serif;
 $title-simple: Verdana, Geneva, Tahoma, sans-serif;
+$text: 'Oswald', sans-serif;
 
 
 //FONT-SIZE:
@@ -47,7 +49,7 @@ $textBolder: bolder;
 
 $align-center: center;
 $align-justify: justify;
-
+$align-end: end;
 
 //LETTER-SPACING:
 
@@ -91,6 +93,7 @@ $bg-color: (
     'bg-siete': #222222,
     'bg-ocho': #000,
     'bg-nueve':#2e6329,
+    'bg-diez': #f5da0e,
 );
 
 $bg-gradient: (
@@ -347,10 +350,84 @@ h2{
         @include animation (scale(1.1), 0.3s);
     }
     .container-btn__wsp{
-        width: 30px;
+        width: ($w-px - 70);
         transition: ease 1s;
         @include media (tablet-3){
-            width: 50px;
+            width: ($w-px - 50);
+        }
+    }
+}
+
+/*CONTENIDO ERROR 404*/
+
+#container-error{
+    background-color: map-get($map: $bg-color, $key: 'bg-diez');
+    .cont-404{
+        @include flex-simple (column, center, center);
+        width: $width;
+        height: $height;
+        .cont-404__first{
+            width: ($width - 10);
+            width: $width;
+            img{
+                width: $width;
+                height: $h-auto;
+            }
+        }
+        .cont-404__second{
+            @include flex-simple (column, center, center);
+            width: ($width - 10);
+            img{
+                width: $width;
+                height: $h-auto;
+                box-shadow: map-get($map: $shadow, $key:'shadow-6');
+                overflow: hidden;
+                @include media (tablet-5) {
+                    width: ($w-px +240);
+                }
+                @include media (desktop) {
+                    width: ($w-px +340);
+                }
+            }
+            h1{
+                @include text-2 ($text,($text-l + .4), map-get($map: $text-color, $key: 'text-one'), $align-center, 15px, 5px); 
+                @include media (tablet-1) {
+                    font-size: ($text-xl + .1);
+                }
+            }
+            p{
+                @include text-2 ($text,($text-l + .2), map-get($map: $text-color, $key: 'text-one'), $align-center, 25px 10px, 5px); 
+                span{
+                    font-weight: $textBolder;
+                    text-decoration: underline;
+                    overflow: hidden;
+                }
+                @include media (tablet-1) {
+                    font-size: $text-xl;
+                }
+            }
+            #button-404{
+                background-color: map-get($map: $bg-color, $key: 'bg-cero');
+                border: none;
+                box-shadow: map-get($map: $shadow, $key:'shadow-6');
+                margin: 20px;
+                a{
+                    text-decoration: none;
+                    @include text-2 ($text,($text-l + .2), map-get($map: $text-color, $key: 'text-one'), $align-center, 0, 10px);
+                }
+                &:hover{
+                    @include animation (scale(1.1), .3s);
+                    overflow: hidden;
+                }
+            }
+        }
+        @include media (tablet-1) {
+            @include flex-simple (row, center, center);
+            padding: 40px 20px;
+        }
+        @include media (tablet-5) {
+            @include flex-simple (row, center, center);
+            padding: 45px 0 40px 0;
         }
     }
 }
