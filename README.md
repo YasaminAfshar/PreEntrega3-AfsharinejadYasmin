@@ -3,8 +3,6 @@
 <img alt="Sass" src="https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=sass&logoColor=white" width="80px" height="40px"/> <img alt="git" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" width="80px" height="40px"/> <img alt="npm" src="https://img.shields.io/badge/-NPM-CB3837?style=flat-square&logo=npm&logoColor=white" width="80px" height="40px"/> <img alt="html5" src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"  width="80px" height="40px"/> <img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=flat-square&logo=Node.js&logoColor=white" width="80px" height="40px"/>
 </p>
 
-<img src="https://i.ibb.co/NnXWkK3/portada.png" alt="Portada de New Hair Recovery, recuperación capilar" border="0">
-
 ## Descripción del proyecto
 Este proyecto fue creado como proyecto final para el curso  de **Desarrollo Web** que estuve realizando en la plataforma **CoderHouse**, primera parte de la carrera de **Desarrollo Full Stack**. Para conocer más sobre el curso puede ingresar en el siguiente link: [Carrera Desarrollo Full Stack](http://https://www.coderhouse.com/online/carrera-online-desarrollo-fullstack "Carrera Desarrollo Full Stack").
 
